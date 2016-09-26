@@ -9,6 +9,17 @@ function Counter() {
 		].join(''),
 		controller: function ($scope) {
 			$scope.count = 0;
+		},
+		link: function (scope, element) {
+			// increment our count when we clicked on
+			element.on('click', function () {
+				scope.count++;
+				scope.$apply();
+			});
+			// unbind the event when the directive is destroyed
+			scope.$on('$destroy', function () {
+				element.off();
+			})
 		}
 	}
 }
