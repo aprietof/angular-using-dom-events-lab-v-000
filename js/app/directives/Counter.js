@@ -11,7 +11,7 @@ function Counter() {
 			$scope.count = 0;
 		},
 		link: function (scope, element) {
-			// increment our count when we clicked on
+			// increment count when clicked on
 			element.on('click', function () {
 				scope.count++;
 				scope.$apply();
